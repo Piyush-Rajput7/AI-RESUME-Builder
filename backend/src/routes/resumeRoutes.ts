@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { supabase } from '../index';
+import { supabase } from '../app';
 import { authenticateUser, AuthenticatedRequest } from '../middleware/auth';
 import { validateRequest } from '../middleware/validation';
 import Joi from 'joi';
