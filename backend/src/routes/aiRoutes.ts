@@ -5,7 +5,7 @@ import { validateRequest } from '../middleware/validation';
 import Joi from 'joi';
 import multer from 'multer';
 import pdfParse from 'pdf-parse';
-import { supabase } from '../app';
+import { supabase } from '../lib/supabase';
 
 const router = Router();
 const aiService = new AIService();
