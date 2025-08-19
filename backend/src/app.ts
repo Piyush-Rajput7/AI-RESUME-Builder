@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from './lib/supabase';
 import { resumeRoutes } from './routes/resumeRoutes';
 import { aiRoutes } from './routes/aiRoutes';
 import { authRoutes } from './routes/authRoutes';
@@ -10,11 +10,6 @@ import { errorHandler } from './middleware/errorHandler';
 import { rateLimiter } from './middleware/rateLimiter';
 
 dotenv.config();
-
-export const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-);
 
 export const app = express();
 
